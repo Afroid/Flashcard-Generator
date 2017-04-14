@@ -59,8 +59,8 @@
 	//consume the promise
 
 	var askFather = function(){
-		fatherMade
-		.then(showOff)//chaining. Means if fatherMade is true, then you can use showOff.
+		fatherMade//primary promise
+		.then(showOff)//chaining. Means if fatherMade is true, then you can use the showOff promise.
 		.then(function(data){
 			console.log(data);
 		})
