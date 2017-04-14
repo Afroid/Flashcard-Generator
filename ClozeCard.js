@@ -35,13 +35,13 @@ inquirer.prompt({
 	type: "list",//Provide a list of options
 	name: "studyCardType",//The type of study card they choose from inquirer
 	message: "Choose your type of study card below:",//Initial phrase prompted to the user
-	choices: ["BasicCard", "Clozure"]//Returns their choice
+	choices: ["Basic Card", "Cloze Card"]//Returns their choice
 }).then(function(data){//Our first promise.
 
 //If the selection is BasicCard, then we prompt them to enter information for the 
 //front and back of the card accordingly, else we prompt them and it asks them
 //for a phrase and an answer/deletion since it'll be Cloze.
-	if (data.studyCardType === "BasicCard") {
+	if (data.studyCardType === "Basic Card") {
 		return inquirer.prompt([
 		{
 			type: "input",
@@ -55,7 +55,7 @@ inquirer.prompt({
 			message: "Add your answer to the back of the Basic Card:"
 		}
 		]);
-	} else {
+	} else if(data.studyCardType === "Cloze Card") {
 		return inquirer.prompt([
 		{
 			type: "input",
